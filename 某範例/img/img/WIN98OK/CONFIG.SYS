@@ -1,0 +1,46 @@
+[menu]
+menuitem=IDECD, IDE CD-ROM .
+menuitem=IDECDM, IDE CD-ROM & Menu Tools
+menuitem=ALLCD, ALL CD-ROM & Menu Tools
+menuitem=NOCD, No CD-ROM
+menudefault=IDECD,10
+menucolor=7,0
+
+[ALLCD]
+device=himem.sys /testmem:off
+device=emm386.exe noems
+device=oakcdrom.sys /D:mscd001 
+device=btdosm.sys 
+device=flashpt.sys
+device=btcdrom.sys /D:mscd001
+device=aspi2dos.sys
+device=aspi8dos.sys
+device=aspi4dos.sys
+device=aspi8u2.sys
+device=aspicd.sys /D:mscd001
+devicehigh=ramdrive.sys /E 4096
+
+[IDECD]
+device=himem.sys /testmem:off
+device=emm386.exe noems
+device=oakcdrom.sys /D:mscd001 
+devicehigh=ramdrive.sys /E 4096
+
+[IDECDM]
+device=himem.sys /testmem:off
+device=emm386.exe noems
+device=oakcdrom.sys /D:mscd001 
+devicehigh=ramdrive.sys /E 4096
+
+
+[NOCD]
+device=himem.sys /testmem:off
+device=emm386.exe noems
+devicehigh=ramdrive.sys /E 4096
+
+[COMMON]
+files=60
+buffers=45
+dos=high,umb
+stacks=9,256
+lastdrive=z
